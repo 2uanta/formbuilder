@@ -1,0 +1,30 @@
+{
+  "name": "form-builder",
+  "version": "1.0.0",
+  "description": "Smart mobile-friendly form builder",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-mac": "electron-builder --mac",
+    "build-win": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.formbuilder.app",
+    "productName": "Form Builder",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "icons/icon.icns",
+      "target": [{"target": "dmg", "arch": ["x64", "arm64"]}]
+    },
+    "win": {
+      "icon": "icons/icon.ico",
+      "target": "nsis"
+    },
+    "files": ["main.js", "preload.js", "src/**/*"],
+    "extraResources": []
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
